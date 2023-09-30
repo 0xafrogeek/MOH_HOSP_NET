@@ -1,1 +1,1 @@
-## Ministry of Health Hospitals Netmwork Infrastructure
+## Ministry of Health Hospitals Network Infrastructure
