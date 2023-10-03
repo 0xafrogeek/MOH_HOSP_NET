@@ -1,6 +1,5 @@
-en
-conf t
 
+!-- Hostname
 hostname MOH-HOSP-CORESW
 line console 0
 password GMBHPNT@2023
@@ -9,7 +8,9 @@ exit
 
 
 !-- Management IP Address
+int ge/1/0.1
 int vlan 199
+decription link to int to gateway
 ip address 10.10.0.199 255.255.255.0
 ip default-gateway 10.10.0.1
 no shutdown
@@ -18,10 +19,10 @@ exit
 
 !-- Add decriptions to interfaces
 int F0/1
-decriptions link to int to gateway
+decription link to int to gateway
 
 
-no ip domain-lookup
+no ip domain lookup
 banner motd #Ministry of Health Internal Networks - No Unauthorized Access!!!#
 enable password GMBHPNT@2023
 service password-encryption
@@ -45,11 +46,15 @@ exit
 !-- Security --!
 !---------------
 
+!-- Change default MD5 algorithm to a more secure one (if available)
+enable algorithm-type {md5 | sha256 | scrypt}
+enable algorithm-type scrypt secret GMBHPNT@2023*
+
 !-- Make sure our switch firmware is up-to-date
 
 !-- Configure switch to use firewall as ntp server
 clock timzone UTC +0 # Timezone for GMB
-ntp server 10.10.10.253
+ntp server 10.10.10.253 # Should be Firewall, which is serving as both router and FW
 
 
 !-- Configure SSH
@@ -63,8 +68,10 @@ transport input ssh # Disable telnet and enable SSH
 ip ssh version 2
 do wr
 
-!-- Disable CDP
+!-- Disable CDP & LLDP
 no cdp run
+no lldp run
+
 
 !-- disable http
 no ip http server
@@ -119,7 +126,7 @@ exit
 
 vlan 160
 name SERVER-ROOM-VLAN
-vlan 99
+vlan 199
 name BlackHole
 exit
 
@@ -185,13 +192,6 @@ exit
 do wr
 
 !--
-ssh -l <username> <SW-IP>
-
-255.255.255.128/25
-128 - 255 
-/28 = 255.255.255.240 -> 255 - 240 = 15  -> 240-128=112-64=48-32=16-16=0 -> 4 bits -> 11111111.11111111.11111111.11110000
-
-!-- Cloudflare DNS: 1.1.1 1.0.0.1
 
 !-- Increase the vty lines/console session timeout
 line con 0 # For console
