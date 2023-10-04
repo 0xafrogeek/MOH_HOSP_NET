@@ -21,8 +21,8 @@
 
 # Access & Trunk Ports
 2. Configure Trunk Ports on all ports that will be connecting the Access points
-    - [ ] Configure enough Trunk ports to match the number of Access Points
-    - [ ] Allow the respective VLANs to pass through the relevant Trunk Ports
+    - [ ] Configure the SW port connected to the FW as trunk and tag relevant VLANS
+    - [ ] Configure enough Trunk ports to match the number of Access Points - All our Cisco APs should be connected to Trunk ports, as VLANs will be implemented on them as well
     - [ ] Configure the rest of the ports as Access Ports
     - [ ] Assign Access Ports to their respective VLANs
 
