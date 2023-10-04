@@ -10,6 +10,7 @@
    - [ ] Update FW firmware
 
 # Network segmentation
+([Pfsense/Cisco VLANs](https://docs.netgate.com/pfsense/en/latest/recipes/switch-vlan-configuration.html#cisco-ios-based-switches))
 1. Create VLANs for the following departments and Add them to a dedicated LAN Interface like <opt7>: 
    - [ ] OPD: OPD-VLAN 
    - [ ] Public Health Office: PHO-VLAN 
@@ -28,7 +29,7 @@
 # DHCP Server
 3. Configure FW as the DHCP Server and limit the IP allocation accordingly
    - [ ] Configure DHCP address ranges for all VLANs on FW - [Services > DHCP Server > <VLAN-NAME>]
-      - Ensure a limited number of IPs are allocated per VLAN, not exceeding the number of staff per shift, per department
+      - Ensure a limited number of IPs are allocated per VLAN, not exceeding the number of staff per shift, per department.
    
 # Network security & control measures
 4. Implement bandwidth control & basic traffic filtering

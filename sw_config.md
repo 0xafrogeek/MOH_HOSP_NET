@@ -33,3 +33,4 @@
     - [ ] Disable CDP and LLDP
     - [ ] Configure/enable DHCP Snooping
     - [ ] Configure Dynamic ARP Inspection (DAI)
+    - [ ] Shutdown all unused ports after configuration
