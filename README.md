@@ -1,1 +1,1 @@
-## Ministry of Health Hospitals Network Infrastructure
+## Ministry of Health Hospital NET configuration guide/checklists
