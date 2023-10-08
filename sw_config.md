@@ -1,15 +1,21 @@
 ## GMB Hospital NET - Switch (SW) configuration checklist
 
+# Vars 
+    - default username/password: cisco, cisco
+    - NEW USERNAME/PASS: mohnetcore/GMBHPNt@2023*
+    - Hostname: mohnet-sw-bmch
+    - ssh timeout: 10 mins
+
 # General, functional config
+    - [ ] Enable secure browsing HTTPS
     - [ ] Upgrade switch firmware
     - [ ] Set SW hostname
-    - [ ] Increment console timeout
+    - [ ] Increment console/ssh timeout
     - [ ] Set banner message
     - [ ] Configure NTP Server - Should point to FW
     - [ ] Disable DNS resolution (domain lookup)
     - [ ] Disable smart port feature
     - [ ] Configure SSH access for management
-    - [ ] Increment console and SSH time-out
 
 # VLAN Config
 ([Cisco VLAN Config Docs](https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst_pon/software/configuration_guide/vlan/b-gpon-config-vlan/configuring_vlan.pdf))
